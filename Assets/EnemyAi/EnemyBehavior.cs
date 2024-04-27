@@ -15,6 +15,7 @@ public class EnemyBehavior : MonoBehaviour
     private bool isAttacking;
     private Transform player;
     private float cooldown;
+    [SerializeField] public float recharge = 10f;
     private EnemyAttack _enemyAttack;
     private Vector3 toPlayer;
     
@@ -27,7 +28,7 @@ public class EnemyBehavior : MonoBehaviour
         // Grab the instance of the enemy attack that we can call its methods
         _enemyAttack = GetComponent<EnemyAttack>();
 
-        cooldown = 1f;
+        cooldown = recharge;
     }
 
     // Update is called once per frame
@@ -37,7 +38,7 @@ public class EnemyBehavior : MonoBehaviour
         // print(Mathf.Atan2(toPlayer.y, toPlayer.x));
         if (toPlayer.magnitude <= attackRadius && cooldown <= 0f)
         {
-            cooldown = 1f;
+            cooldown = recharge;
             _enemyAttack.attack(transform.position, Quaternion.Euler(new Vector3(0, 0, Mathf.Atan2(toPlayer.y, toPlayer.x) * Mathf.Rad2Deg)));
         }
 

@@ -127,6 +127,7 @@ MonoBehaviour:
   attackRadius: 10
   stopRadius: 5
   moveSpeed: 1
+  recharge: 2
 --- !u!1 &3267019384864368737
 GameObject:
   m_ObjectHideFlags: 0
