@@ -78,12 +78,4 @@ public class ElectricityPool : MonoBehaviour
 
     }
 
-    public void restoreMana()
-    {
-        if (shieldOn)
-        {
-
-        }
-    }
-
 }
