@@ -1,46 +1,53 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
-    private GameObject player;
-    
+    public GameObject cameras;
+
+    public GameObject cinCam;
+        private CinemachineConfiner confiner;
+    public PolygonCollider2D scene1Confiner;
+    public PolygonCollider2D scene2Confiner;
+    public PolygonCollider2D scene3Confiner;
+
     public GameObject room1Exit;
     public GameObject room2Enterance;
     public GameObject room2Exit;
     public GameObject room3Enterance;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        player = GameObject.Find("Player");   
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.name == "RoomExit1")
+        confiner = cinCam.GetComponent<CinemachineConfiner>();
+        Debug.Log(collision.gameObject.name);
+
+        if (collision.gameObject.name == "Room1Exit")
         {
-            player.transform.position = room2Enterance.transform.position;
-        }  
-        if (collision.gameObject.name == "RoomExit2")
-        {
-            player.transform.position = room3Enterance.transform.position;
+            this.transform.position = room2Enterance.transform.position;
+            cameras.transform.position = room2Enterance.transform.position;
+            confiner.m_BoundingShape2D = scene2Confiner;
         }
-        if(collision.gameObject.name == "RoomEnterance2")
+        if (collision.gameObject.name == "Room2Exit")
         {
-            player.transform.position = room1Exit.transform.position;
+            this.transform.position = room3Enterance.transform.position;
+            cameras.transform.position = room3Enterance.transform.position;
+            confiner.m_BoundingShape2D = scene3Confiner;
         }
-        if (collision.gameObject.name == "RoomEnterance3")
+        if (collision.gameObject.name == "Room2Enterance")
         {
-            player.transform.position = room2Exit.transform.position;
+            this.transform.position = room1Exit.transform.position;
+            cameras.transform.position = room1Exit.transform.position;
+            confiner.m_BoundingShape2D = scene1Confiner;
+        }
+        if (collision.gameObject.name == "Room3Enterance")
+        {
+            this.transform.position = room2Exit.transform.position;
+            cameras.transform.position = room2Exit.transform.position;
+            confiner.m_BoundingShape2D = scene2Confiner;
         }
     }
 

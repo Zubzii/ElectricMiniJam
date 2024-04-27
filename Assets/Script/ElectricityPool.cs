@@ -41,8 +41,6 @@ public class ElectricityPool : MonoBehaviour
         shieldActivate();
         lightSource();
         manaReduction();
-
-        Debug.Log(mana);
     }
 
     public void shieldActivate()
