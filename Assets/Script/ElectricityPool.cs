@@ -17,7 +17,7 @@ public class ElectricityPool : MonoBehaviour
     private Light2D light2D;
 
     float mana = 1f;
-    [SerializeField] float manaReductionSpeed = .01f;
+    float manaReductionSpeed = .01f;
 
     private void Awake()
     {
