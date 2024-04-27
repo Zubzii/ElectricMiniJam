@@ -34,11 +34,16 @@ public class ProjectileManager : MonoBehaviour
     {
         if (collision.CompareTag("Enemy") || collision.CompareTag("Environment"))
         {
-            firstAudioSource.Stop();
-            secondAudioSource.Play();
-            
-            Destroy(gameObject, .2f);
+            OnDestroyPlayerProjectile();
         }
 
+    }
+
+    public void OnDestroyPlayerProjectile()
+    {
+        firstAudioSource.Stop();
+        secondAudioSource.Play();
+
+        Destroy(gameObject, .2f);
     }
 }
