@@ -1,30 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShieldCollisions : MonoBehaviour
 {
-    ElectricityPool electricityPool;
+    public ElectricityPool electricityPool;
     public GameObject shield;
+    [SerializeField] public float rechargeRate = 0.05f;
+    public AudioSource audioSource;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "EnemyOrbAttack")
+        if (collision.gameObject.tag == "Projectile")
         {
-            electricityPool.mana += 0.2f;
+            if (electricityPool.mana <= 1)
+            {
+                electricityPool.mana += rechargeRate;
+            }
+            audioSource.Play();
+            Destroy(collision.gameObject);
+
         }
     }
 
+
+
 }
+

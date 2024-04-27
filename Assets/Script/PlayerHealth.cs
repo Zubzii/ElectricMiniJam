@@ -33,7 +33,6 @@ public class PlayerHealth : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        Debug.Log("Health: " + currentHealth);
 
         healthReduction();
 

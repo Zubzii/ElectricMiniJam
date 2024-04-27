@@ -12,6 +12,7 @@ public class ProjectileManager : MonoBehaviour
     private AudioSource[] audioSources;
     private AudioSource firstAudioSource;
     private AudioSource secondAudioSource;
+    private bool hasCollided = false;
     
 
 
@@ -32,8 +33,10 @@ public class ProjectileManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") || collision.CompareTag("Environment"))
+        if (!hasCollided && (collision.CompareTag("Enemy") || collision.CompareTag("Environment") || collision.CompareTag("Shield")))
         {
+            hasCollided = true;
+            _rigidbody.velocity = Vector3.zero;
             OnDestroyPlayerProjectile();
         }
 
