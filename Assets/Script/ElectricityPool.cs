@@ -12,11 +12,12 @@ public class ElectricityPool : MonoBehaviour
     public GameObject shield;
     private SpriteRenderer shieldImage;
     private Collider2D shieldCollider;
+    private bool shieldOn = false;
 
     public GameObject playerLight;
     private Light2D light2D;
 
-    float mana = 1f;
+    public float mana = 1f;
     float manaReductionSpeed = .01f;
 
     private void Awake()
@@ -75,6 +76,14 @@ public class ElectricityPool : MonoBehaviour
         mana -= manaReductionSpeed*Time.deltaTime;
         manaBarImage.fillAmount = mana;
 
+    }
+
+    public void restoreMana()
+    {
+        if (shieldOn)
+        {
+
+        }
     }
 
 }

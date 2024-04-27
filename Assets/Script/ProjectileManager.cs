@@ -8,11 +8,23 @@ public class ProjectileManager : MonoBehaviour
     public float projectileSpeed;
     
     private Rigidbody2D _rigidbody;
+
+    private AudioSource[] audioSources;
+    private AudioSource firstAudioSource;
+    private AudioSource secondAudioSource;
+    
+
+
     
     void Start()
     {
+        audioSources = GetComponents<AudioSource>();
+        firstAudioSource = audioSources[0];
+        secondAudioSource = audioSources[1];
+
         _rigidbody = GetComponent<Rigidbody2D>();
-        
+        secondAudioSource.Play();
+
         Vector3 forward = transform.rotation * Vector3.right;
         
         _rigidbody.velocity = forward * projectileSpeed;
@@ -20,11 +32,13 @@ public class ProjectileManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print(collision.tag);
         if (collision.CompareTag("Enemy") || collision.CompareTag("Environment"))
         {
-            print("HERE");
-            Destroy(gameObject);
+            firstAudioSource.Stop();
+            secondAudioSource.Play();
+            
+            Destroy(gameObject, .2f);
         }
+
     }
 }

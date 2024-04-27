@@ -27,23 +27,23 @@ public class RoomManager : MonoBehaviour
 
         if (collision.gameObject.name == "Room1Exit")
         {
-            this.transform.position = room2Enterance.transform.position;
+            this.transform.position = room2Enterance.transform.position + new Vector3(2, 0, 0);
             cameras.transform.position = room2Enterance.transform.position;
             confiner.m_BoundingShape2D = scene2Confiner;
         }
         if (collision.gameObject.name == "Room2Exit")
         {
-            this.transform.position = room3Enterance.transform.position;
+            this.transform.position = room3Enterance.transform.position + new Vector3(2, 0, 0);
             cameras.transform.position = room3Enterance.transform.position;
             confiner.m_BoundingShape2D = scene3Confiner;
         }
-        if (collision.gameObject.name == "Room2Enterance")
+        if (collision.gameObject.name == "Room2Entrance")
         {
             this.transform.position = room1Exit.transform.position;
             cameras.transform.position = room1Exit.transform.position;
             confiner.m_BoundingShape2D = scene1Confiner;
         }
-        if (collision.gameObject.name == "Room3Enterance")
+        if (collision.gameObject.name == "Room3Entrance")
         {
             this.transform.position = room2Exit.transform.position;
             cameras.transform.position = room2Exit.transform.position;

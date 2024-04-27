@@ -204,8 +204,8 @@ GameObject:
   - component: {fileID: 9090096271130436320}
   - component: {fileID: -9206896518649529406}
   m_Layer: 0
-  m_Name: OrbAttack
-  m_TagString: Untagged
+  m_Name: EnemyOrbAttack
+  m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
