@@ -25,6 +25,10 @@ Latest commit eafb2ee on Dec 10, 2021
 @mviranyi@shana@FritzsHero@ahmyi@FutureClemens@shiftkey@bdougie@matzar@networm@Wiblz@tim-hub@theDrake
 72 lines (59 sloc)  1.25 KB
  
+extensions.json
+launch.json
+settings.json
+
 
 # This .gitignore file should be placed at the root of your Unity project directory
 #
