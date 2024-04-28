@@ -18,7 +18,7 @@ public class ElectricityPool : MonoBehaviour
     private Light2D light2D;
 
     public float mana = 1f;
-    float manaReductionSpeed = .01f;
+    public float manaReductionSpeed = .01f;
 
     private void Awake()
     {
