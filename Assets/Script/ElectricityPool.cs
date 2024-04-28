@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ElectricityPool : MonoBehaviour
@@ -64,7 +65,7 @@ public class ElectricityPool : MonoBehaviour
 
         if (light2D.pointLightOuterRadius < .01) 
         {
-            //PLAYER DIES
+            SceneManager.LoadScene(2);
             mana = 0;
         }
     }
