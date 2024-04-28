@@ -30,19 +30,17 @@ public class ProjectileManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        print("Here is the tag! " + collision.tag);
         if (!hasCollided && (collision.CompareTag("Shield") || collision.CompareTag("Enemy") || collision.CompareTag("Environment")))
         {
-            OnDestroyPlayerProjectile();
-            hasCollided = true;
-            _rigidbody.velocity = Vector3.zero;
+            // OnDestroyPlayerProjectile();
+            // hasCollided = true;
+            // _rigidbody.velocity = Vector3.zero;
         }
 
     }
 
-    public void OnDestroyPlayerProjectile()
+    public void OnDestroy()
     {
-        Destroy(gameObject);
         firstAudioSource.Stop();
         secondAudioSource.Play();
     }

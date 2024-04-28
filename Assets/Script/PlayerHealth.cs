@@ -30,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
         if (!shieldCollider.enabled && collision.CompareTag("Projectile"))
         {
             TakeDamage(damageAmount);
+            Destroy(collision.gameObject);
         }
     }
 

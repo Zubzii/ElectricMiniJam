@@ -60,7 +60,7 @@ public class ElectricityPool : MonoBehaviour
 
     public void lightSource()
     {
-        light2D.pointLightOuterRadius = mana*5;
+        light2D.pointLightOuterRadius = mana*10;
 
         if (light2D.pointLightOuterRadius < .01) 
         {

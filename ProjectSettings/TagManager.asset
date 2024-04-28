@@ -8,6 +8,7 @@ TagManager:
   - Environment
   - Projectile
   - Shield
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX
