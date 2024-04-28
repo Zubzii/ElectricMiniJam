@@ -15,9 +15,16 @@ public class ShieldCollisions : MonoBehaviour
         if (collision.CompareTag("Projectile"))
         {
             Destroy(collision.gameObject);
-            if (electricityPool.mana <= 1)
+            if (electricityPool.mana <= 1f)
             {
-                electricityPool.mana += rechargeRate;
+                if (electricityPool.mana + rechargeRate <= 1f) 
+                {
+                    electricityPool.mana += rechargeRate;
+                }
+                else
+                {
+                    electricityPool.mana = 1f;
+                }
             }
             audioSource.Play();
         }

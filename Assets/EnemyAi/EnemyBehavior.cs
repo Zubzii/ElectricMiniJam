@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +19,9 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] public float recharge = 10f;
     private EnemyAttack _enemyAttack;
     private Vector3 toPlayer;
+
+    public int health = 100;
+    public int damageMultiplier = 50;
     
     // Start is called before the first frame update
     void Start()
@@ -49,5 +53,20 @@ public class EnemyBehavior : MonoBehaviour
         }
 
         cooldown -= Time.deltaTime;
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("PlayerProjectile"))
+        {
+            print("enemy health: " + health);
+            health -= damageMultiplier;
+            Destroy(collision.gameObject);
+        }
     }
 }
