@@ -23,8 +23,8 @@ public class SpawnEnemies : MonoBehaviour
     {
         for (int i = 0; i < spawnCount; i++)
         {
-            entityXPos = Mathf.Round(UnityEngine.Random.Range(tilemap.cellBounds.x + 10, tilemap.size.x + tilemap.cellBounds.x - 3));
-            entityYPos = Mathf.Round(UnityEngine.Random.Range(tilemap.cellBounds.y + 3, tilemap.size.y + tilemap.cellBounds.y - 3));
+            entityXPos = Mathf.Round(UnityEngine.Random.Range(tilemap.cellBounds.x + 5, tilemap.size.x + tilemap.cellBounds.x - 1));
+            entityYPos = Mathf.Round(UnityEngine.Random.Range(tilemap.cellBounds.y + 3, tilemap.size.y + tilemap.cellBounds.y - 1));
             print("Cell grid size: (" + entityXPos + ", " + entityYPos + ")");
             print("Position: " + tilemap.CellToWorld(new Vector3Int((int)entityXPos, (int)entityYPos, 1)));
             Instantiate(enemy, tilemap.CellToWorld(new Vector3Int((int)entityXPos, (int)entityYPos, 1)), Quaternion.identity);

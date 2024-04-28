@@ -9,19 +9,17 @@ public class ProjectileManager : MonoBehaviour
     
     private Rigidbody2D _rigidbody;
 
-    private AudioSource[] audioSources;
-    private AudioSource firstAudioSource;
-    private AudioSource secondAudioSource;
+    private AudioSource audioSource;
+
     private bool hasCollided = false;
     
     void Start()
     {
-        audioSources = GetComponents<AudioSource>();
-        firstAudioSource = audioSources[0];
-        secondAudioSource = audioSources[1];
+        audioSource = GetComponent<AudioSource>();
+
 
         _rigidbody = GetComponent<Rigidbody2D>();
-        secondAudioSource.Play();
+        audioSource.Play();
 
         Vector3 forward = transform.rotation * Vector3.right;
         
@@ -36,11 +34,5 @@ public class ProjectileManager : MonoBehaviour
             _rigidbody.velocity = Vector3.zero;
         }
 
-    }
-
-    public void OnDestroy()
-    {
-        firstAudioSource.Stop();
-        secondAudioSource.Play();
     }
 }

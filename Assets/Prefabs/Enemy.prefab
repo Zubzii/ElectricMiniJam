@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1274893943779171040}
   - component: {fileID: 1964577175986355712}
   - component: {fileID: 4132714256208379786}
+  - component: {fileID: -4969874452632604137}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -130,6 +131,18 @@ MonoBehaviour:
   recharge: 2
   health: 100
   damageMultiplier: 50
+--- !u!210 &-4969874452632604137
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2576859934819399699}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 10
+  m_SortAtRoot: 0
 --- !u!1 &3267019384864368737
 GameObject:
   m_ObjectHideFlags: 0
