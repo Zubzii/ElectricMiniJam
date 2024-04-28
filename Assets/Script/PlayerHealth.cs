@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     public GameObject healthBar;
     private Image healthBarImage;
     private int damageAmount;
+    private Collider2D shieldCollider;
+    public GameObject shield;
 
     private void Awake()
     {
@@ -20,11 +22,12 @@ public class PlayerHealth : MonoBehaviour
         maxHealth = 100;
         damageAmount = 10;
         currentHealth = maxHealth;
+        shieldCollider = shield.GetComponent<Collider2D>();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Projectile"))
+        if (!shieldCollider.enabled && collision.CompareTag("Projectile"))
         {
             TakeDamage(damageAmount);
         }

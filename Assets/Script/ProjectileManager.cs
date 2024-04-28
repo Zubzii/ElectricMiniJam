@@ -14,9 +14,6 @@ public class ProjectileManager : MonoBehaviour
     private AudioSource secondAudioSource;
     private bool hasCollided = false;
     
-
-
-    
     void Start()
     {
         audioSources = GetComponents<AudioSource>();
@@ -33,20 +30,20 @@ public class ProjectileManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!hasCollided && (collision.CompareTag("Enemy") || collision.CompareTag("Environment") || collision.CompareTag("Shield")))
+        print("Here is the tag! " + collision.tag);
+        if (!hasCollided && (collision.CompareTag("Shield") || collision.CompareTag("Enemy") || collision.CompareTag("Environment")))
         {
+            OnDestroyPlayerProjectile();
             hasCollided = true;
             _rigidbody.velocity = Vector3.zero;
-            OnDestroyPlayerProjectile();
         }
 
     }
 
     public void OnDestroyPlayerProjectile()
     {
+        Destroy(gameObject);
         firstAudioSource.Stop();
         secondAudioSource.Play();
-
-        Destroy(gameObject, .2f);
     }
 }

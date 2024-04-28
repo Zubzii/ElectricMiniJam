@@ -12,19 +12,15 @@ public class ShieldCollisions : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Projectile")
+        if (collision.CompareTag("Projectile"))
         {
+            Destroy(collision.gameObject);
             if (electricityPool.mana <= 1)
             {
                 electricityPool.mana += rechargeRate;
             }
             audioSource.Play();
-            Destroy(collision.gameObject);
-
         }
     }
-
-
-
 }
 

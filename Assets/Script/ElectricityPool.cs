@@ -12,7 +12,6 @@ public class ElectricityPool : MonoBehaviour
     public GameObject shield;
     private SpriteRenderer shieldImage;
     private Collider2D shieldCollider;
-    private bool shieldOn = false;
 
     public GameObject playerLight;
     private Light2D light2D;
@@ -33,7 +32,6 @@ public class ElectricityPool : MonoBehaviour
     {
         shieldCollider.enabled = false;
         shieldImage.enabled = false;
-        
     }
 
     // Update is called once per frame
