@@ -21,16 +21,13 @@ public class SpawnEnemies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         for (int i = 0; i < spawnCount; i++)
         {
-            // print("Grid size: (" + tilemap.cellBounds.x + ", " + tilemap.cellBounds.y + ")");
-            entityXPos = Mathf.Round(UnityEngine.Random.Range(tilemap.cellBounds.x, tilemap.size.x + tilemap.cellBounds.x));
-            entityYPos = Mathf.Round(UnityEngine.Random.Range(tilemap.cellBounds.y, tilemap.size.y + tilemap.cellBounds.y));
-            // print("Cell Size: " + tilemap.cellBounds);
-            // print("Position: (" + entityXPos + ", " + entityYPos + ")");
+            entityXPos = Mathf.Round(UnityEngine.Random.Range(tilemap.cellBounds.x + 10, tilemap.size.x + tilemap.cellBounds.x - 3));
+            entityYPos = Mathf.Round(UnityEngine.Random.Range(tilemap.cellBounds.y + 3, tilemap.size.y + tilemap.cellBounds.y - 3));
+            print("Cell grid size: (" + entityXPos + ", " + entityYPos + ")");
+            print("Position: " + tilemap.CellToWorld(new Vector3Int((int)entityXPos, (int)entityYPos, 1)));
             Instantiate(enemy, tilemap.CellToWorld(new Vector3Int((int)entityXPos, (int)entityYPos, 1)), Quaternion.identity);
         }
-
     }
 }

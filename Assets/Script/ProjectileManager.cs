@@ -30,11 +30,10 @@ public class ProjectileManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!hasCollided && (collision.CompareTag("Shield") || collision.CompareTag("Enemy") || collision.CompareTag("Environment")))
+        if (collision.CompareTag("Environment"))
         {
-            // OnDestroyPlayerProjectile();
-            // hasCollided = true;
-            // _rigidbody.velocity = Vector3.zero;
+            Destroy(gameObject);
+            _rigidbody.velocity = Vector3.zero;
         }
 
     }
