@@ -9,6 +9,8 @@ TagManager:
   - Projectile
   - Shield
   - PlayerProjectile
+  - Health
+  - Boss
   layers:
   - Default
   - TransparentFX

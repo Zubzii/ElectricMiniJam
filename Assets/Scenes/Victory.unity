@@ -4682,7 +4682,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5097d8004af7ed5489c7bff7408fbebe, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 00835668f76cff543a15cde14993da4a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4984,7 +4984,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart
+  m_text: Play Again
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -5079,7 +5079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1662543115254288015, guid: 8d301cd61dbc1104e884d14cb17140ba, type: 3}
       propertyPath: m_Intensity
-      value: 0.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1662543115254288015, guid: 8d301cd61dbc1104e884d14cb17140ba, type: 3}
       propertyPath: m_LightType
@@ -5099,7 +5099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1662543115254288015, guid: 8d301cd61dbc1104e884d14cb17140ba, type: 3}
       propertyPath: m_PointLightOuterRadius
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1662543115254288015, guid: 8d301cd61dbc1104e884d14cb17140ba, type: 3}
       propertyPath: m_LocalBounds.m_Center.x
@@ -5294,7 +5294,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Your Light has faded
+  m_text: Evil has been vanquished
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -5409,8 +5409,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 61.2, y: -8.5}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 65.5, y: -10.3795}
+  m_SizeDelta: {x: 177.9593, y: 33.7589}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1733650030
 MonoBehaviour:

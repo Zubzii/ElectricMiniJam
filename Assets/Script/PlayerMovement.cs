@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private Collider2D shieldCollider;
     public GameObject shield;
 
+    public bool canMove;
+
     void Start()
     {
         body = GetComponent<Rigidbody2D>();

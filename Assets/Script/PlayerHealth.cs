@@ -33,13 +33,24 @@ public class PlayerHealth : MonoBehaviour
             TakeDamage(damageAmount);
             Destroy(collision.gameObject);
         }
+
+        if (collision.CompareTag("Health"))
+        {
+            increaseHealth(30);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.CompareTag("Boss"))
+        {
+            TakeDamage(damageAmount*2);
+        }
     }
 
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
 
-        healthReduction();
+        updateHealthBar();
 
         if (currentHealth <= 0)
         {
@@ -52,8 +63,17 @@ public class PlayerHealth : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
-    public void healthReduction()
+    public void updateHealthBar()
     {
         healthBarImage.fillAmount = (float)currentHealth / 100f;
+    }
+
+    void increaseHealth(int health)
+    {
+        if (currentHealth < maxHealth)
+        {
+            currentHealth += health;
+        }
+        updateHealthBar();
     }
 }

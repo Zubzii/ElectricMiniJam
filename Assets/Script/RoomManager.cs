@@ -37,18 +37,6 @@ public class RoomManager : MonoBehaviour
             cameras.transform.position = room3Enterance.transform.position;
             confiner.m_BoundingShape2D = scene3Confiner;
         }
-        if (collision.gameObject.name == "Room2Entrance")
-        {
-            this.transform.position = room1Exit.transform.position;
-            cameras.transform.position = room1Exit.transform.position;
-            confiner.m_BoundingShape2D = scene1Confiner;
-        }
-        if (collision.gameObject.name == "Room3Entrance")
-        {
-            this.transform.position = room2Exit.transform.position;
-            cameras.transform.position = room2Exit.transform.position;
-            confiner.m_BoundingShape2D = scene2Confiner;
-        }
     }
 
 }
